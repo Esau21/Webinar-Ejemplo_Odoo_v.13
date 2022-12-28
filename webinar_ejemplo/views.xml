@@ -1,0 +1,38 @@
+<odoo>
+
+    <record id="view_tree_ejemplo" model="ir.ui.view">
+        <field name="name">view.tree.ejemplo</field>
+        <field name="model">wb.tareas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_form_tarea" model="ir.ui.view">
+        <field name="name">view.form.tarea</field>
+        <field name="model">wb.tareas</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="Descripcion de la tarea"/>
+                        <field name="status" string="Estado de la tarea"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="action_view_todo" model="ir.actions.act_window">
+        <field name="name">Listado de tareas</field>
+        <field name="res_model">wb.tareas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_todo" parent="" action="webinar_ejemplo.action_view_todo"/>
+
+</odoo>
